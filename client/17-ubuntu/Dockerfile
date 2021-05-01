@@ -29,7 +29,7 @@ RUN apt-get update -qq \
     add /tmp/bareos.key \
  && echo "deb $BAREOS_REPO /" > /etc/apt/sources.list.d/bareos.list \
  && apt-get update -qq \
- && apt-get install -qq -y --no-install-recommends \
+ && apt-get install -qq -y --no-install-recommends --allow-unauthenticated \
     bareos-client mysql-client postgresql-client bareos-tools \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*

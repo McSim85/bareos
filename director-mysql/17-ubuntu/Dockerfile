@@ -39,7 +39,7 @@ RUN apt-get update -qq \
  && echo 'postfix postfix/main_mailer_type select No configuration' \
     | debconf-set-selections \
  && apt-get update -qq \
- && apt-get install -qq -y --no-install-recommends \
+ && apt-get install -qq -y --no-install-recommends --allow-unauthenticated \
     bareos bareos-database-mysql mysql-client \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
